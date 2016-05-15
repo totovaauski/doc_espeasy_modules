@@ -1,0 +1,5 @@
+== Documentation sur les modules ESPeasy
+
+=== Exemple Relais ou Lumière
+include::relais.asciidoc[]
+
