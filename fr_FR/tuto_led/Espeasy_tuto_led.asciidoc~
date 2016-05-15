@@ -1,0 +1,94 @@
+:icons:
+== Cas pratique
+
+{nbsp} +
+
+=== Allumer/Eteindre une LED à partir du Dashboard et d'avoir l'info allumé/éteint.
+
+{nbsp} +
+
+Rien de bien révolutionnaire !
+Mais tout électronicien, pro, amateur ou débutant saura qu'une led peut aisément être remplacée par un relais qui ouvre bien d'autre possibilité !
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 1 - Résistance de 330 ohms
+* 1 - Résistance de 4.7 kohms
+* 1 - Led (rouge/verte/bleu/jaune fluo/prune écrasée ...)
+* 
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+Le schéma est le même que celui de la programmation, j'ai juste rajouté sur la sortie gpio2 une led et une résistance de 330 ohm en série (et une résistance de rappel au +3.3v de 4.7K). 
+Le BP est le reset.
+
+{nbsp} +
+
+image::CaptureLed.PNG[width=768,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+{nbsp} +
+Voilà ce que j'ai créé dans la partie Devices.
+{nbsp} +
+
+image::CaptureLed02.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+Pas de rules pour ce cas 
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+Dans Jeedom après avoir procéder à l'inclusion de mon ESP 05,
+( il faut une remontée d'info, vous pouvez taper dans votre navigateur "http://IPdevotreEspEasy/control?cmd=gpio,2,1")
+j'ai rajouté deux commandes "ON/OFF"
+
+{nbsp} +
+
+image::CaptureLed03.PNG[width=800,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé et led éteinte.
+
+{nbsp} +
+
+image::SAM_8445.JPG[width=400,align="center"]
+
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé et led alumée.
+
+{nbsp} +
+
+image::SAM_8446.JPG[width=400,align="center"]
+
+{nbsp} +
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage
