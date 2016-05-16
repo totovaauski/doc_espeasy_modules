@@ -1,0 +1,103 @@
+:icons:
+== Cas pratique
+
+{nbsp} +
+
+=== Commande de VMC
+
+{nbsp} +
+
+Le but de ce cas pratique est de gérer une VMC en fonction de l'humidité.
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 1 - DHT 11 (ou 22)
+* 1 - Module relais Arduino (alimenté en 5V mais commandable en 3.3V par opto)
+* 1 - Résistance 4.7K (pour le DHT)
+* Breadboard et cables
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+Le schéma, la partie VMC est à raccorder sur la sortie relais.
+L'alimentation se fait par l'USB.
+
+{nbsp} +
+
+image::tuto_DHT_bb.png[width=768,align="center"]
+
+{nbsp} +
+
+* *Visuel du cablage*
+
+{nbsp} +
+Attention, les capteurs sont toujours alimentés en 3.3V pour le Wemos ou ESP-01, ici le relais est alimenté en 5V, mais la commande (par opto) ce fait en 3.3V seul la masse (gnd) est commune.
+{nbsp} +
+
+image::SAM_8448.jpg[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+{nbsp} +
+Voici la configuration des différents "Device"
+Le DHT sur le gpio 2 (pin D4)
+Le relais sur le gpio 16 (pin D0)
+et "System Info" pour une remonté d'info du switch sur le dashboard jeedom
+{nbsp} +
+
+image::CaptureDevice.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+Dans "Rules", j'ai rajouté la commande du relais en fonction de l'humidité.
+relais = ON si Hum > 55.
+relais = OFF si Hum < 55.
+
+{nbsp} +
+
+image::CaptureRules.PNG[width=768,align="center"]
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+Après l'inclusion de mon module, j'ai rajouté deux commandes actions on/off pour le gpio16 du relais.
+La commande on/off permet de mettre en fonction la VMC, mais si au relevé d'info suivante (ici toutes les 60sec) la condition n'est pas remplie pour qu'il reste allumé, il va s'éteindre. 
+{nbsp} +
+
+image::CaptureJeedom.PNG[width=800,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé.
+
+{nbsp} +
+
+image::Capture05.PNG[width=400,align="center"]
+
+{nbsp} +
+
+Source : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084 
+{nbsp} +
+remerciements : @rol-rider pour son partage

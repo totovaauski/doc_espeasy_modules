@@ -1,0 +1,96 @@
+:icons:
+== Cas pratique
+
+{nbsp} +
+
+=== Commande de ???
+
+{nbsp} +
+
+BUT : Le but de ce cas pratique est ...
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 1 - 
+* 1 - 
+* 1 - 
+* 
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+Description
+
+{nbsp} +
+
+image::lien_du_schema.png[width=768,align="center"]
+
+{nbsp} +
+
+* *Visuel du cablage*
+
+{nbsp} +
+TEXTE
+{nbsp} +
+
+image::lien_du_visuel.jpg[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+{nbsp} +
+TEXTE
+{nbsp} +
+
+image::Lien_des_devices.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+TEXTE
+
+{nbsp} +
+
+image::Lien_des_rules.PNG[width=768,align="center"]
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+TEXTE
+{nbsp} +
+
+image::Lien_des_commandes.PNG[width=800,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé.
+
+{nbsp} +
+
+image::Lien_du_visuel_jeedom.PNG[width=400,align="center"]
+
+{nbsp} +
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage
