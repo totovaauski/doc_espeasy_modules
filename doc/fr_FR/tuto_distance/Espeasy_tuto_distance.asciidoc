@@ -41,10 +41,6 @@ image::tuto_distance_bb.png[width=768,align="center"]
 Le schéma pour l'adaptation de niveau, et si vous êtes sceptique allez voir l'explication (http://wiki.mchobby.be/index.php?title=MicroPython-HC-SR04).
 Pour l'afficheur lcd, il est alimenté en 5v, et commandé en 3.3v et ça lui va !
 
-Pour la configuration du Wemos, rien de compliqué, c'est la même procédure que les autres exemples, les deux "Devices" à ajouter sont dans la liste, Ultrasonic Sensor - HC-SR04 et Display - LCD2004
-le seul souci est d'avoir l'adresse I2C du module Affichage.
-Tous les modules I2C sont sur le même bus, ils leur faut donc une adresse pour les identifier.
-{nbsp} +
 
 image::Capture.PNG[width=512,align="center"]
 
@@ -53,13 +49,26 @@ image::Capture.PNG[width=512,align="center"]
 * *Configuration des "Device"*
 
 {nbsp} +
-Allez voir dans "Tools" ---"I2C Scan" pour voir l'adresse, ici 27 à renseigner dans le device Display
-En ligne 1 Distance:[Distance#Distance]Cm en fonction du nom donné au capteur.
-En ligne 2 %systime% avec quelques espaces pour centrer l'heure sur la ligne.
-Vous devrez aussi cocher dans "Tools"---"Advenced" Use NTP et rajouter 2 dans Timezone Offset (Pour avoir l'heure sur l'afficheur).
+Pour la configuration du Wemos, rien de compliqué, c'est la même procédure que les autres exemples, les deux "Devices" à ajouter sont dans la liste, Ultrasonic Sensor - HC-SR04 et Display - LCD2004
+le seul souci est d'avoir l'adresse I2C du module Affichage.
+Tous les modules I2C sont sur le même bus, ils leur faut donc une adresse pour les identifier.
+
 {nbsp} +
 
-image::CaptureScanI2C.PNG[width=1024,align="center"]
+Allez voir dans "Tools" ---"I2C Scan" pour voir l'adresse, ici 27 à renseigner dans le device Display
+
+image::CaptureScanI2C.PNG[width=512,align="center"]
+
+En ligne 1 Distance:[Distance#Distance]Cm en fonction du nom donné au capteur.
+
+En ligne 2 %systime% avec quelques espaces pour centrer l'heure sur la ligne.
+
+image::CaptureWemos01.PNG[width=512,align="center"]
+
+
+Vous devrez aussi cocher dans "Tools"---"Advenced" Use NTP et rajouter 2 dans Timezone Offset (Pour avoir l'heure sur l'afficheur).
+
+image::Capture003.PNG[width=512,align="center"]
 
 {nbsp} +
 
@@ -77,10 +86,7 @@ Pas de rules dans ce cas (ou libre à vous d'en créer)
 * *Les commandes coté Jeedom*
 {nbsp} +
 
-TEXTE
-{nbsp} +
-
-image::Lien_des_commandes.PNG[width=800,align="center"]
+image::CaptureJeedom.PNG[width=800,align="center"]
 
 {nbsp} +
 
