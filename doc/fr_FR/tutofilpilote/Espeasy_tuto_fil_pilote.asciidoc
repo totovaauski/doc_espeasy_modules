@@ -1,0 +1,146 @@
+:icons:
+== Module Fil Pilote
+
+{nbsp} +
+
+=== Commande de radiateur électrique équipé d'un fil pilote
+
+{nbsp} +
+
+Mais avant toute chose :
+
+WARNING: [red BIG]#ATTENTION CE MONTAGE NECESSITE UNE TENSION SECTEUR.
+{nbsp} +
+LE 220V : CA PIQUE 
+{nbsp} +
+LE 220V : CA TUE 
+{nbsp} +
+DONC A REALISER EN TOUTE CONNAISSANCE DE CAUSE (ET DE CONSEQUENCE)#
+
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 2 - MOC3041 (opto-triac) ce modèle à une détection de passage par zéro ce qui limite les parasites.
+* 1 - Afficheur 2X16 I2C----pour le fun, pas vraiment utile.
+* 2 - Résistances de 150 ohm
+* 2 - diodes 1N4007
+* Breadboard et câbles
+
+{nbsp} +
+* *Schéma de principe*
+
+Nous allons  gérer 4 ordres : *Confort*, *Eco*, *Arrêt* et *Hors Gel* avec deux MOC3041 et deux diodes 1N4007 donc deux gpio.
+
+On pourrait se contenter  des ordres *Confort* et *Arrêt* et utiliser le plugin thermostat pour gérer la température en rajoutant une sonde et économiser un MOC3041, une diode et surtout un gpio.
+
+La gestion pourrait aussi se faire grâce au circuit I/O MCP23017 ,16 entré/sortie par bus I2C géré par Espeasy.
+
+Sur ce tableau, nous voyons le signal électrique en fonction de l'ordre.
+
+{nbsp} +
+
+image::CaptureTableau.PNG[width=512,align="center"]
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+Outre la valeur des deux résistance R5 et R6 (150ohm) le schéma de la gestion du fil pilote est identique  à celui-ci.
+
+Pour schématiser, je dirais que l'opto-triac, c'est un interrupteur commandé par la lumière (une led)
+
+Les opto-triacs permettent de séparer la partie 230VAC de la partie commande (led) en 3.3V.
+
+{nbsp} +
+
+image::Fil_pilote_bb.PNG[width=768,align="center"]
+
+Correspondance entre la sortie des gpio et le signal fil pilote.
+
+image::CaptureTableau02.PNG[width=512,align="center"]
+
+{nbsp} +
+
+
+* *Visuel du cablage*
+
+Toujours plus fouillis sur la planche, surtout que le 230VAC est présent !
+
+image::SAM_8452.JPG[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+{nbsp} +
+Ici, j'ai rajouté un device System Info avec la puissance du Wifi, que je bascule sur l'afficheur, pratique pour connaitre la portée du Wifi.
+
+image::CaptureDevice01.PNG[width=768,align="center"]
+
+{nbsp} +
+Les deux gpio 12 et 13 sont configurés dans Hardware Settings en Output.
+
+image::CaptureDevice02.PNG[width=256,align="center"]
+
+{nbsp} +
+Détail de la conf pour le moc1 (GPIO-12)
+
+image::CaptureDevice06.PNG[width=512,align="center"]
+
+ Procéder de manière identique pour le 2e Moc (Name = moc2, 1st GPIO = GPIO-13, Value Name 1 = Switch2)
+
+{nbsp} +
+Détail du device System Info, dans la partie "Indicator" trois choix possible, *Uptime*, *Free RAM* et *Wifi RSSI*
+
+image::Wemos_02.PNG[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+La partie "Rules" est assez simple. Les changements d'ordres se feront par les commandes:
+
+"http://<ESP-ip>/control?cmd=event,confort"
+
+"http://<ESP-ip>/control?cmd=event,arret"
+
+"http://<ESP-ip>/control?cmd=event,horsgel"
+
+"http://<ESP-ip>/control?cmd=event,eco"
+
+
+image::CaptureDevice03.PNG[width=400,align="center"]
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+image::CaptureCommande.PNG[width=800,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Pour le dashboard j'ai simplement récupéré en info l'état des deux MOC3041 et du wifi, je laisse le soin au pro du code de trouver un widget adapté.
+
+{nbsp} +
+
+image::CaptureDashboard.PNG[width=400,align="center"]
+
+WARNING: [red BIG]#On ne le répetera jamais assez, Attention ou vous mettez les doigts, le 230VAC peut être mortel.#
+{nbsp} +
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage

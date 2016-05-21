@@ -1,5 +1,30 @@
-== Documentation sur les modules ESPeasy
+== Cas pratiques sur les modules ESPeasy
 
-=== Exemple Relais ou Lumière
-include::relais.asciidoc[]
+==== Commuter un relais, lorsque le capteur PIR détecte une présence ...
+
+* link:tuto_Pir/Espeasy_tuto_pir.asciidoc[Tuto Capteur PIR]
+
+==== Allumer/Eteindre une LED à partir du Dashboard et avoir l'info allumé/éteint
+
+* link:tuto_led/Espeasy_tuto_led.asciidoc[Tuto Led]
+
+==== Commander une VMC
+
+* link:tuto_VMC/Espeasy_tuto_vmc.asciidoc[Tuto pour piloter une VMC]
+
+==== Je veux mesurer une distance et l'afficher sur un afficheur LCD
+
+* link:tuto_distance/Espeasy_tuto_distance.asciidoc[Tuto pour mesurer une distance]
+
+==== Mesure de température à base de DS18B20
+
+* link:tutods18b20/Espeasy_tuto_DS18B20.asciidoc[Tuto pour mesurer une temperature]
+
+==== Mesure de température à base de DS18B20 (V2)
+
+* link:tutods18b20_1gpio/Espeasy_tuto_DS18B20_1gpio.asciidoc[Tuto pour mesurer une temperature avec 1 seul gpio]
+
+==== Piloter son radiateur à l'aide du fil pilote
+
+* link:tutofilpilote/Espeasy_tuto_fil_pilote.asciidoc[Tuto pour fil pilote]
 
