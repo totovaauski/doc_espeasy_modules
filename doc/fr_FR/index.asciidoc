@@ -1,4 +1,4 @@
-== Cas pratiques sur les modules ESPeasy
+=== Cas pratiques sur les modules ESPeasy
 
 ==== Commuter un relais, lorsque le capteur PIR détecte une présence ...
 
