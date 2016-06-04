@@ -34,4 +34,4 @@
 
 === Augmenter le nombre d'entrée d'un Wemos D1 mini a l'aide d'un MPC23017
 
-* link:tuto_contact_ils/Espeasy_tuto_contact_ILS_MPC23017.asciidoc[Tuto pour Capteur ILS]
+* link:tuto_contact_ils/Espeasy_tuto_contact_ILS_MPC23017.asciidoc[Tuto pour la gestion d'un MPC23017]
