@@ -1,0 +1,87 @@
+:icons:
+== Cas pratique : Capteur de Contact ILS
+
+{nbsp} +
+
+=== Detecteur d'ouverture de porte , de fenetre ...
+
+{nbsp} +
+
+Les capteurs ILS  (Interrupteur à Lame Souple) sont utilisés pour détecter toute sorte d'ouverture, dans les alarmes et autre.
+Relativement simple à mettre en œuvre, deux lames dans une ampoule de verre sont en contacte lorsqu'un champ magnétique est proche (un aimant).
+
+Lorsque l'aimant est éloigné (ouverture de la fenêtre) le contact s'ouvre.
+ Il n'est pas question de rivaliser avec les capteurs z-wave ou Mysensors puisqu'une alimentation sur pile n'est pas recommandée. (peut être faisable en mode sleep?)
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 1 - ILS + aimant
+* Breadboard et câbles
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+image::ILS_Sketch_bb.png[width=768,align="center"]
+
+{nbsp} +
+Comme vous pouvez le constater, rien de plus simple, pas de résistance, d'adaptation de niveau et autre.
+La sortie de ILS est câblé sur D4 qui correspond au GPIO2.
+Ce gpio est intéressant pour les tests puisque la petite led bleue proche de l'antenne y est connecté (comme la pin 13 d'un Uno).
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+{nbsp} +
+Je ne vous explique plus comment accéder à la page de configuration du Wemos.
+
+Le device choisi est un "Switch input"
+
+le gpio est le 2 (D4) et Pull Up est coché. je rappelle que cette fonction met la sortie D4 au +3.3V par l'intermédiaire d'une résistance (interne au Wemos), sans cette option, l'entrée serait flottante (soit + soit -) il faudrait donc utiliser une résistance (10K) pour relier l'entrée D4, Pull Up au plus ou Pull Down au moins.
+
+{nbsp} +
+
+image::Capture01.PNG[width=512,align="center"]
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+
+{nbsp} +
+
+Si le câblage est bon et le Wemos configuré, à la mise sous tension par l'usb et lorsque le plugin ESPeasy sera en mode inclusion, dès le changement d'état de l'ILS ( avec l'aimant) la création de l'équipement devrait apparaitre dans Jeedom....et la led bleu s’allumer ! 
+
+image::Capture02.PNG[width=728,align="center"]
+
+A la création de l'équipement, on a pas toujours le choix entre numérique et binaire ! je ne sais pas pourquoi, j'ai du recommencer plusieurs fois ! mais ici le binaire facilite les choses pour utiliser un widget plus adapté.
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé.
+
+{nbsp} +
+
+image::Capture04.PNG[width=256,align="center"]
+
+{nbsp} +
+
+Voilà pour cet exemple, une autre solution pour être d'utiliser un MCP23017 capable de gérer 16 entrée/sortie.
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage
