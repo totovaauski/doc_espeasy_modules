@@ -2,7 +2,7 @@
 
 === Commuter un relais, lorsque le capteur PIR détecte une présence ...
 
-* link:tuto_Pir/Espeasy_tuto_pir.asciidoc[Tuto Capteur PIR]
+* link:tuto_PIR/Espeasy_tuto_pir.asciidoc[Tuto Capteur PIR]
 
 === Allumer/Eteindre une LED à partir du Dashboard et avoir l'info allumé/éteint
 
