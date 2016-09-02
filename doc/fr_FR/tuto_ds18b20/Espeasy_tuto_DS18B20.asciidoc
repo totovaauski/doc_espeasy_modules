@@ -1,0 +1,114 @@
+:icons:
+== Mesure de température à base de DS18B20
+
+{nbsp} +
+
+=== Pas un, ni deux mais trois DS18B20 pour le Wimos
+
+{nbsp} +
+
+BUT : Le but de ce cas pratique est de remonter les informations de température (a base de DS18B20) vers jeedom 
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 3 - DS18B20
+* 3 - Résistances de 4.7K ohm
+* Breadboard et câbles
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+Description
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Tuto_DS18B20_bb.png[width=768,align="center"]
+
+{nbsp} +
+Le schéma est simple, chaque DS18B20 dispose de sa résistance et de son gpio.
+Il m'a quand même posé quelques problèmes pour la configuration du Wemos, une fois câblé, je ne pouvais plus accéder au Wemos?
+Erreur de câblage ? Non !
+Après analyse, le gpio15 (D8) posait problème après un reset, il m'était impossible d'accéder au Wimos.
+D'après le schéma du Wemos, la sortie du gpio15 (D8) dispose d'une résistance de rappel à la masse, éviter donc de l'utiliser pour un DS18B20, en utilisant D7 comme sur le schéma, plus aucun soucis.
+
+{nbsp} +
+
+
+* *Configuration des "Device"*
+
+{nbsp} +
+La première chose à faire est de se rendre dans le menu Devices.
+On accède à la configuration des devices en cliquant sur Edit sur la ligne  1.
+les deux flèches au dessus permettent de changer de page.
+3 pages avec 4 devices par pages soit 12 devices possible. 
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Capture00.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+Lorsque l'on Edit la première ligne des Devices, le choix est simple puisque le DS18B20 est dans la liste.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Capture01.PNG[width=768,align="center"]
+
+{nbsp} +
+
+Après avoir enregistré par "Submit", l'adresse du DS18B20 est automatiquement affiché.
+Vous remarquerez que dans "Value Name 1" j'ai modifié Temperature en Temperature 01, si vous ne différenciez pas chaque capteur, Jeedom ne créera qu'une seule commande info.
+L'opération est à répéter trois fois, en modifiant le gpio et Value Name 1.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Capture02.PNG[width=768,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+Pas de rules ici
+
+{nbsp} +
+
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+Et voila le résultat dans Jeedom une fois inclus. 
+Ne vous inquiétez pas si une seul commande info apparaît, les autres vont suivre en fonction des lectures (20 sc dans Delay.....ça va assez vite !)
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Capture04.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec un Widget associé.
+
+Les DS18B20 ont une tolérance de +/- 0.5°   ce qui correspond à mes trois capteurs.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20/Capture03.PNG[width=400,align="center"]
+
+{nbsp} +
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage

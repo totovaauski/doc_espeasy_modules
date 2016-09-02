@@ -18,15 +18,15 @@
 
 === Mesure de température à base de DS18B20
 
-* link:tuto_ds18b20/Espeasy_tuto_DS18B20.asciidoc[Tuto pour mesurer une temperature]
+* link:tutods18b20/Espeasy_tuto_DS18B20.asciidoc[Tuto pour mesurer une temperature]
 
 === Mesure de température à base de DS18B20 (V2)
 
-* link:tuto_ds18b20_1gpio/Espeasy_tuto_DS18B20_1gpio.asciidoc[Tuto pour mesurer une temperature avec 1 seul gpio]
+* link:tutods18b20_1gpio/Espeasy_tuto_DS18B20_1gpio.asciidoc[Tuto pour mesurer une temperature avec 1 seul gpio]
 
 === Piloter son radiateur à l'aide du fil pilote
 
-* link:tuto_filpilote/Espeasy_tuto_fil_pilote.asciidoc[Tuto pour fil pilote]
+* link:tutofilpilote/Espeasy_tuto_fil_pilote.asciidoc[Tuto pour fil pilote]
 
 === Detecteur d'ouverture de porte , de fenetre ... a base de capteur ILS
 

@@ -1,0 +1,103 @@
+:icons:
+== Mesure de température à base de DS18B20
+
+{nbsp} +
+
+=== Trois DS18B20 pour le Wimos en utilisant un seul GPIO
+
+{nbsp} +
+
+BUT : Le but de ce cas pratique est de remonter les informations de température (a base de DS18B20) vers jeedom 
+
+Sur les conseils d'un membre du forum, @Deennoo, pourquoi utiliser 3 gpio alors qu'un seul suffit.
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 3 - DS18B20
+* 1 - Résistance de 4.7K ohm
+* Breadboard et câbles
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Tuto_DS18B20_P_bb.png[width=768,align="center"]
+
+{nbsp} +
+Comme vous le constaté, les DS18B20 sont montés en parallèle avec une seul résistance.
+
+{nbsp} +
+
+
+* *Configuration des "Device"*
+
+{nbsp} +
+Puisque tous les DS18B20 sont sur le même gpio, pour les différencier, vous devez sélectionner après avoir enregistré par "Submit" le DeviceNr" (1, 2 ou 3).
+
+Pour faire simple, Capteur 1---Device Nr 1....etc.
+
+* 20 dans delay          pour une lecture toute les 20sc.
+
+* 2 dans Decimals      pour deux chiffres après la virgule.
+
+*  %value%+2  dans Formula Temperature 1       pour rajouter 2 à la température.
+
+{nbsp} +
+
+ Pour plus d'info, cliquer sur le point d'interrogation (Lien en Anglais).
+ 
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Capture103.PNG[width=768,align="center"]
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Capture101.PNG[width=768,align="center"]
+
+{nbsp} +
+
+Voila vos trois devices de créé, avec des ports différents et des noms de valeurs différentes (Temperature 1, 2 ,3) pour que Jeedom retrouve ces petits !
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Capture104.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+Si votre Wemos est connecté au PC, vous avez toujours la possibilité de visionner dans le moniteur série ce qu'il s'y passe.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Capture106.PNG[width=768,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+Pas de rules ici
+
+{nbsp} +
+
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+image::../../images/IMG_tuto_ds18b20_1gpio/Capture105.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage

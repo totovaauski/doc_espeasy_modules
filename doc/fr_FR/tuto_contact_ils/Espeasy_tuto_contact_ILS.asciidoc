@@ -29,7 +29,7 @@ Lorsque l'aimant est éloigné (ouverture de la fenêtre) le contact s'ouvre.
 
 {nbsp} +
 
-image::ILS_Sketch_bb.png[width=768,align="center"]
+image::../../images/IMG_tuto_contact_ils/ILS_Sketch_bb.png[width=768,align="center"]
 
 {nbsp} +
 Comme vous pouvez le constater, rien de plus simple, pas de résistance, d'adaptation de niveau et autre.
@@ -49,7 +49,7 @@ le gpio est le 2 (D4) et Pull Up est coché. je rappelle que cette fonction met 
 
 {nbsp} +
 
-image::Capture01.PNG[width=512,align="center"]
+image::../../images/IMG_tuto_contact_ils/Capture01.PNG[width=512,align="center"]
 
 {nbsp} +
 
@@ -63,7 +63,7 @@ image::Capture01.PNG[width=512,align="center"]
 
 Si le câblage est bon et le Wemos configuré, à la mise sous tension par l'usb et lorsque le plugin ESPeasy sera en mode inclusion, dès le changement d'état de l'ILS ( avec l'aimant) la création de l'équipement devrait apparaitre dans Jeedom....et la led bleu s’allumer ! 
 
-image::Capture02.PNG[width=728,align="center"]
+image::../../images/IMG_tuto_contact_ils/Capture02.PNG[width=728,align="center"]
 
 A la création de l'équipement, on a pas toujours le choix entre numérique et binaire ! je ne sais pas pourquoi, j'ai du recommencer plusieurs fois ! mais ici le binaire facilite les choses pour utiliser un widget plus adapté.
 
@@ -76,7 +76,7 @@ Voila ce que donne le Dashboard avec un Widget associé.
 
 {nbsp} +
 
-image::Capture04.PNG[width=256,align="center"]
+image::../../images/IMG_tuto_contact_ils/Capture04.PNG[width=256,align="center"]
 
 {nbsp} +
 

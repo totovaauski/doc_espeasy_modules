@@ -31,7 +31,7 @@ d’où l'adaptation à l'aide de deux résistances.
 
 {nbsp} +
 
-image::../../images/IMG_tuto_distance/tuto_distance_bb.png[width=768,align="center"]
+image::tuto_distance_bb.png[width=768,align="center"]
 
 {nbsp} +
 
@@ -42,7 +42,7 @@ Le schéma pour l'adaptation de niveau, et si vous êtes sceptique allez voir l'
 Pour l'afficheur lcd, il est alimenté en 5v, et commandé en 3.3v et ça lui va !
 
 
-image::../../images/IMG_tuto_distance/Capture.PNG[width=512,align="center"]
+image::Capture.PNG[width=512,align="center"]
 
 {nbsp} +
 
@@ -57,18 +57,18 @@ Tous les modules I2C sont sur le même bus, ils leur faut donc une adresse pour 
 
 Allez voir dans "Tools" ---"I2C Scan" pour voir l'adresse, ici 27 à renseigner dans le device Display
 
-image::../../images/IMG_tuto_distance/CaptureScanI2C.PNG[width=512,align="center"]
+image::CaptureScanI2C.PNG[width=512,align="center"]
 
 En ligne 1 Distance:[Distance#Distance]Cm en fonction du nom donné au capteur.
 
 En ligne 2 %systime% avec quelques espaces pour centrer l'heure sur la ligne.
 
-image::../../images/IMG_tuto_distance/CaptureWemos01.PNG[width=512,align="center"]
+image::CaptureWemos01.PNG[width=512,align="center"]
 
 
 Vous devrez aussi cocher dans "Tools"---"Advenced" Use NTP et rajouter 2 dans Timezone Offset (Pour avoir l'heure sur l'afficheur).
 
-image::../../images/IMG_tuto_distance/Capture003.PNG[width=512,align="center"]
+image::Capture003.PNG[width=512,align="center"]
 
 {nbsp} +
 
@@ -86,7 +86,7 @@ Pas de rules dans ce cas (ou libre à vous d'en créer)
 * *Les commandes coté Jeedom*
 {nbsp} +
 
-image::../../images/IMG_tuto_distance/CaptureJeedom.PNG[width=800,align="center"]
+image::CaptureJeedom.PNG[width=800,align="center"]
 
 {nbsp} +
 
@@ -97,7 +97,7 @@ Voila ce que donne le Dashboard avec un Widget associé.
 
 {nbsp} +
 
-image::../../images/IMG_tuto_distance/Lien_du_visuel_jeedom.PNG[width=400,align="center"]
+image::Lien_du_visuel_jeedom.PNG[width=400,align="center"]
 
 {nbsp} +
 

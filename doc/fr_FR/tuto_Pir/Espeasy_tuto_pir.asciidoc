@@ -1,0 +1,166 @@
+:icons:
+== Capteur PIR et BH1750
+
+{nbsp} +
+
+=== Commuter un relais, lorsque le capteur PIR détecte une présence ...
+
+{nbsp} +
+
+ ...mais seulement si la luminosité est inférieur à un certain seuil.
+En clair:
+s'il fait sombre, le relais colle s'il y a une présence.
+s'il fait jour le relais ne colle pas, présence ou pas.
+
+{nbsp} +
+
+==== Composants
+
+{nbsp} +
+
+* 1 - Wemos D1 mini
+* 1 - Capteur PIR----HC-SR501
+* 1 - BH1750--capteur d'intensité lumineuse I2C référencé aussi GY-302
+* 1 - Afficheur 2X16 I2C----pour le fun, pas vraiment utile.
+* 1 - Module Relais 
+* Breadboard et câbles
+
+{nbsp} +
+
+* *Description du module PIR*
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CapturePIR01.PNG[width=512,align="center"]
+
+{nbsp} +
+
+Petite description du capteur PIR coté composant.
+
+* détection dans un rayon de 110°
+* détection jusqu’à 7 mètres de distance maximum (réglage sensibilité)
+* input voltage (besoin en alimentation) : 4,5 V à 20V-- ici il sera alimenté en 5V
+* le potentiomètre trigger time est une temporisation réglable de 5sc à 200sc
+
+La sortie est en 3.3V donc compatible avec le Wemos.
+Le réglage des deux potentiomètres est un peu problématique surtout lors des tests !
+Celui de la tempo, (le deuxième à partir du jumper) est réglé à fond vers la gauche qui correspond à environs 5sc.
+
+{nbsp} +
+
+* *Schéma de cablage*
+
+{nbsp} +
+
+Le schéma se complique, mais reste assez simple, les modules relais, afficheur, et PIR sont alimentés en 5V
+(j'ai utilisé une alim 5V différente de la sortie du 5V Wemos afin de soulager le Wemos)
+seul le capteur BH1750 est alimenté par le 3.3V du Wemos.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/tuto_PIR_bb.png[width=768,align="center"]
+
+{nbsp} +
+
+* *Visuel du cablage*
+
+{nbsp} +
+
+La réalité est un peu plus .....fouillis, mais ça fonctionne !
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/SAM_8451.jpg[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Device"*
+
+[underline]#On passe à la partie configuration du Wemos.#
+
+image::../../images/IMG_tuto_Pir/CaptureConfig01.PNG[width=768,align="center"]
+
+{nbsp} +
+
+[underline]#Un scan I2C pour vérifier la présence sur le bus I2C du capteur BH1750 et LCD Modules à des adresses différentes.#
+
+image::../../images/IMG_tuto_Pir/CaptureConfig08.PNG[width=512,align="center"]
+
+{nbsp} +
+
+[underline]#Configuration du BH1750.#
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig06.PNG[width=768,align="center"]
+
+{nbsp} +
+
+[underline]#Configuration de l'afficheur avec la quantité de lumière en ligne 1 et l'heure en ligne 2.#
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig03.PNG[width=768,align="center"]
+
+{nbsp} +
+
+Pour le relais et le PIR nous utilisons le type de device switch input.
+qui, comme son nom ne l'indique pas peut être une entrée (input) mais aussi une sortie (output) le terme switch in/out put aurait été plus clair...enfin pour moi !
+le choix se fait dans Hardware settings
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig02.PNG[width=512,align="center"]
+
+{nbsp} +
+
+[underline]#Configuration du relais#
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig05.PNG[width=512,align="center"]
+
+{nbsp} +
+
+[underline]#Configuration du capteur PIR#
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig04.PNG[width=512,align="center"]
+
+{nbsp} +
+
+* *Configuration des "Rules"*
+
+{nbsp} +
+Il ne nous manque que la partie Rules (règle) le relais (gpio 14) va prendre la valeur (0/1) en fonction du déclenchement du PIR si le capteur lux est inférieure à 100.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureConfig07.PNG[width=768,align="center"]
+
+{nbsp} +
+
+==== Coté Jeedom
+
+{nbsp} +
+
+* *Les commandes coté Jeedom*
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureJeedom01.PNG[width=1024,align="center"]
+
+{nbsp} +
+
+* *Le visuel Jeedom*
+{nbsp} +
+
+Voila ce que donne le Dashboard avec le widget de base.
+
+{nbsp} +
+
+image::../../images/IMG_tuto_Pir/CaptureJeedom03.PNG[width=400,align="center"]
+
+{nbsp} +
+
+Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
+{nbsp} +
+remerciements : @rol-rider pour son partage

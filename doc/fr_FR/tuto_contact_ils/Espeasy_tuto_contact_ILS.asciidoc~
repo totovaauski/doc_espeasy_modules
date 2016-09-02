@@ -8,7 +8,7 @@
 {nbsp} +
 
 Les capteurs ILS  (Interrupteur à Lame Souple) sont utilisés pour détecter toute sorte d'ouverture, dans les alarmes et autre.
-Relativement simple à mettre en œuvre, deux lames dans une ampoule de verre sont en contacte lorsqu'un champ magnétique est proche (un aimant).
+Relativement simple à mettre en œuvre, deux lames dans une ampoule de verre sont en contact lorsqu'un champ magnétique est proche (un aimant).
 
 Lorsque l'aimant est éloigné (ouverture de la fenêtre) le contact s'ouvre.
  Il n'est pas question de rivaliser avec les capteurs z-wave ou Mysensors puisqu'une alimentation sur pile n'est pas recommandée. (peut être faisable en mode sleep?)
@@ -29,7 +29,7 @@ Lorsque l'aimant est éloigné (ouverture de la fenêtre) le contact s'ouvre.
 
 {nbsp} +
 
-image::ILS_Sketch_bb.png[width=768,align="center"]
+image::../../images/IMG_tuto_contact_ils/ILS_Sketch_bb.png[width=768,align="center"]
 
 {nbsp} +
 Comme vous pouvez le constater, rien de plus simple, pas de résistance, d'adaptation de niveau et autre.

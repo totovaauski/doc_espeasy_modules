@@ -32,7 +32,7 @@ L'alimentation se fait par l'USB.
 
 {nbsp} +
 
-image::tuto_DHT_bb.png[width=768,align="center"]
+image::../../images/IMG_tuto_VMC/tuto_DHT_bb.png[width=768,align="center"]
 
 {nbsp} +
 
@@ -42,7 +42,7 @@ image::tuto_DHT_bb.png[width=768,align="center"]
 Attention, les capteurs sont toujours alimentés en 3.3V pour le Wemos ou ESP-01, ici le relais est alimenté en 5V, mais la commande (par opto) ce fait en 3.3V seul la masse (gnd) est commune.
 {nbsp} +
 
-image::SAM_8448.jpg[width=512,align="center"]
+image::../../images/IMG_tuto_VMC/SAM_8448.jpg[width=512,align="center"]
 
 {nbsp} +
 
@@ -55,7 +55,7 @@ Le relais sur le gpio 16 (pin D0)
 et "System Info" pour une remonté d'info du switch sur le dashboard jeedom
 {nbsp} +
 
-image::CaptureDevice.PNG[width=1024,align="center"]
+image::../../images/IMG_tuto_VMC/CaptureDevice.PNG[width=1024,align="center"]
 
 {nbsp} +
 
@@ -68,7 +68,7 @@ relais = OFF si Hum < 55.
 
 {nbsp} +
 
-image::CaptureRules.PNG[width=768,align="center"]
+image::../../images/IMG_tuto_VMC/CaptureRules.PNG[width=768,align="center"]
 
 {nbsp} +
 
@@ -83,7 +83,7 @@ Après l'inclusion de mon module, j'ai rajouté deux commandes actions on/off po
 La commande on/off permet de mettre en fonction la VMC, mais si au relevé d'info suivante (ici toutes les 60sec) la condition n'est pas remplie pour qu'il reste allumé, il va s'éteindre. 
 {nbsp} +
 
-image::CaptureJeedom.PNG[width=800,align="center"]
+image::../../images/IMG_tuto_VMC/CaptureJeedom.PNG[width=800,align="center"]
 
 {nbsp} +
 
@@ -94,7 +94,7 @@ Voila ce que donne le Dashboard avec un Widget associé.
 
 {nbsp} +
 
-image::Capture05.PNG[width=400,align="center"]
+image::../../images/IMG_tuto_VMC/Capture05.PNG[width=400,align="center"]
 
 {nbsp} +
 

@@ -33,7 +33,7 @@ Le BP est le reset.
 
 {nbsp} +
 
-image::CaptureLed.PNG[width=768,align="center"]
+image::../../images/IMG_tuto_led/CaptureLed.PNG[width=768,align="center"]
 
 {nbsp} +
 
@@ -43,7 +43,7 @@ image::CaptureLed.PNG[width=768,align="center"]
 Voilà ce que j'ai créé dans la partie Devices.
 {nbsp} +
 
-image::CaptureLed02.PNG[width=1024,align="center"]
+image::../../images/IMG_tuto_led/CaptureLed02.PNG[width=1024,align="center"]
 
 {nbsp} +
 
@@ -67,7 +67,7 @@ j'ai rajouté deux commandes "ON/OFF"
 
 {nbsp} +
 
-image::CaptureLed03.PNG[width=800,align="center"]
+image::../../images/IMG_tuto_led/CaptureLed03.PNG[width=800,align="center"]
 
 {nbsp} +
 
@@ -78,7 +78,7 @@ Voila ce que donne le Dashboard avec un Widget associé et led éteinte.
 
 {nbsp} +
 
-image::SAM_8445.JPG[width=400,align="center"]
+image::../../images/IMG_tuto_led/SAM_8445.JPG[width=400,align="center"]
 
 {nbsp} +
 
@@ -86,7 +86,7 @@ Voila ce que donne le Dashboard avec un Widget associé et led alumée.
 
 {nbsp} +
 
-image::SAM_8446.JPG[width=400,align="center"]
+image::../../images/IMG_tuto_led/SAM_8446.JPG[width=400,align="center"]
 
 {nbsp} +
 Lien vers le forum : https://www.jeedom.com/forum/viewtopic.php?f=84&t=18084
